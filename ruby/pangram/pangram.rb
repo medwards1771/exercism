@@ -1,5 +1,3 @@
-require 'pry'
-
 class Pangram
   def self.pangram?(phrase)
     alphabet_letters = ("a".."z").to_a
