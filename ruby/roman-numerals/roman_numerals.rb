@@ -11,14 +11,8 @@ class Fixnum
     answer2 = answer.gsub("LXL","XC")
     answer3 = answer2.gsub("CCCC", "CD")
     answer4 = answer3.gsub("DCD", "CM")
-    if answer4.include?("VIIII")
-      answer5 = answer4.gsub("VIIII", "IX")
-    elsif
-      answer5 = answer4.gsub("IIII", "IV")
-    else
-      answer5 = answer4
-    end
-    answer5
+    answer5 = answer4.gsub("VIIII", "IX")
+    answer6 = answer5.gsub("IIII", "IV")
   end
 end
 
