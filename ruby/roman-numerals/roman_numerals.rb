@@ -8,16 +8,17 @@ class Fixnum
     five_hundreds = hundreds.gsub("CCCCC", "D")
     thousands = five_hundreds.gsub("DD", "M")
     answer = thousands.gsub("XXXX", "XL")
-    if answer.include?("VIIII")
-      answer2 = answer.gsub("VIIII", "IX")
+    answer2 = answer.gsub("LXL","XC")
+    answer3 = answer2.gsub("CCCC", "CD")
+    answer4 = answer3.gsub("DCD", "CM")
+    if answer4.include?("VIIII")
+      answer5 = answer4.gsub("VIIII", "IX")
     elsif
-      answer2 = answer.gsub("IIII", "IV")
+      answer5 = answer4.gsub("IIII", "IV")
     else
-      answer2 = answer
+      answer5 = answer4
     end
-    answer3 = answer2.gsub("LXL","XC")
-    answer4 = answer3.gsub("CCCC", "CD")
-    answer5 = answer4.gsub("DCD", "CM")
+    answer5
   end
 end
 
