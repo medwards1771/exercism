@@ -3,7 +3,16 @@ class Robot
 
   def initialize
     @name = generate_name
-    # reset if self.class.all.map{ |robot| robot.name }.include? @name
+    reset if self.class.all.map{ |robot| robot.name }.include? @name
+    self.class.all << self
+  end
+
+  class << self
+    attr_writer :all
+  end
+
+  def self.all
+    @@all ||= []
   end
 
   def reset
