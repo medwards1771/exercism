@@ -17,7 +17,7 @@ class Sieve
 
   def remove_composites(array, divisor)
     array.each do |x|
-      array.delete(x) if x != divisor && x % divisor == 0
+      array.delete(x) if x != divisor && (x % divisor).zero?
     end
   end
 end

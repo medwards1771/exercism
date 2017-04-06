@@ -1,5 +1,3 @@
-require 'pry'
-
 class Phrase
   attr_reader :word_string, :clean_word_string
 
@@ -9,7 +7,7 @@ class Phrase
   end
 
   def word_count
-    counts = Hash.new
+    counts = {}
     clean_word_string.split(' ').each do |word|
       counts[word] ? counts[word] += 1 : counts[word] = 1
     end

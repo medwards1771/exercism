@@ -3,7 +3,7 @@ class Robot
 
   def initialize
     @name = generate_name
-    reset if self.class.all.map{ |robot| robot.name }.include? @name
+    reset if self.class.all.map(&:name).include? @name
     self.class.all << self
   end
 
@@ -12,7 +12,7 @@ class Robot
   end
 
   def self.all
-    @@all ||= []
+    @all ||= []
   end
 
   def reset
@@ -20,6 +20,7 @@ class Robot
   end
 
   private
+
   def generate_name
     generate_letters
     generate_numbers

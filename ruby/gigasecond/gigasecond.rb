@@ -4,6 +4,6 @@ end
 
 class Gigasecond
   def self.from(birthdate)
-    birthdate + 1000000000
+    birthdate + 1_000_000_000
   end
 end

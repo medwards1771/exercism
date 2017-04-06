@@ -3,7 +3,7 @@ require 'prime'
 class Prime
   class << self
     def nth(n)
-      raise ArgumentError if n == 0
+      raise ArgumentError if n.zero?
       first(n).last
     end
   end

@@ -1,6 +1,6 @@
 class Complement
   def self.of_dna(nucleotide_string)
-    return '' if self.contaminated(nucleotide_string)
+    return '' if contaminated(nucleotide_string)
     nucleotide_string.chars.map do |char|
       get_complementary_nuke(char)
     end.join
@@ -20,7 +20,7 @@ class Complement
 
   def self.contaminated(string)
     clean_string = string.chars.select do |char|
-      ['G', 'C', 'T', 'A'].include?(char)
+      %w[G C T A].include?(char)
     end.join
     clean_string != string
   end
