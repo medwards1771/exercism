@@ -2,7 +2,7 @@ class Pangram
   def self.pangram?(phrase)
     alphabet_letters = ('a'..'z').to_a
     clean_phrase = phrase.downcase.tr('^a-z', '')
-    clean_phrase.chars.each { |char| alphabet_letters.delete(char) }
+    clean_phrase.each_char { |char| alphabet_letters.delete(char) }
     alphabet_letters == []
   end
 end

@@ -1,5 +1,4 @@
 class Squares
-  attr_reader :number
 
   def initialize(number)
     @number = number
@@ -11,12 +10,16 @@ class Squares
   end
 
   def square_of_sum
-    (1..number).inject(:+)**2
+    (1..number).inject(0, :+)**2
   end
 
   def sum_of_squares
-    (1..number).inject { |sum, n| sum + (n**2) }
+    (1..number).inject(0) { |sum, n| sum + (n**2) }
   end
+
+  private
+
+  attr_reader :number
 end
 
 module BookKeeping

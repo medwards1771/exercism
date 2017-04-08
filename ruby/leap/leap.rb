@@ -1,11 +1,7 @@
 class Year
   class << self
     def leap?(year)
-      if (year % 400).zero?
-        true
-      else
-        (year % 4).zero? && (year % 100).nonzero?
-      end
+      (year % 400).zero? || (year % 4).zero? && (year % 100).nonzero?
     end
   end
 end
