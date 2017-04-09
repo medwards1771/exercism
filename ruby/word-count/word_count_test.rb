@@ -69,7 +69,7 @@ class PhraseTest < Minitest::Test
   end
 
   def test_with_quotations
-    skip
+    # skip
     phrase = Phrase.new("Joe can't tell between 'large' and large.")
     counts = {"joe"=>1, "can't"=>1, "tell"=>1, "between"=>1, "large"=>2, "and"=>1}
     assert_equal counts, phrase.word_count
@@ -93,7 +93,7 @@ class PhraseTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
+    # skip
     assert_equal 1, BookKeeping::VERSION
   end
 end
