@@ -1,13 +1,12 @@
 module RunLengthEncoding
   def encode(expanded_chars)
-    index = 0
     collapsed_chars = ''
-    while index < expanded_chars.length
-      char = expanded_chars[index]
+    until expanded_chars.empty?
       char_count = 0
-      until expanded_chars[index] != char
+      char = expanded_chars[0]
+      while expanded_chars.chr == char
         char_count += 1
-        index += 1
+        expanded_chars.slice!(0)
       end
       char_count = '' if char_count == 1
       collapsed_chars += "#{char_count}#{char}"
@@ -19,7 +18,7 @@ module RunLengthEncoding
     expanded_chars = ''
     until collapsed_chars.empty?
       char_count = ''
-      char_count << collapsed_chars.slice!(0) while /\d+/ =~ (collapsed_chars[0])
+      char_count << collapsed_chars.slice!(0) while /\d+/ =~ collapsed_chars[0]
       char = collapsed_chars[0]
       char_count = 1 if char_count.empty?
       collapsed_chars.slice!(0)
