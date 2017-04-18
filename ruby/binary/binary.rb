@@ -1,22 +1,20 @@
 # WTF are first principles
 
 module Binary
-  # So: `101 => 1*2^2 + 0*2^1 + 1*2^0 => 1*4 + 0*2 + 1*1 => 4 + 1 => 5 base 10`.
   def to_decimal(number)
+    raise ArgumentError, 'You can only pass 0s and 1s' if number[/[^0-1]/]
     places = number.size - 1
+    exponents = (0..places).to_a.reverse
+    factors =  number.chars
+    hash = exponents.zip(factors).to_h
     sum = 0
-    p exponents = (0..places).to_a.reverse
-    p factors =  number.chars
-    p hash = exponents.zip(factors).to_h
-    # {1=>"1", 0=>"0"}
-    hash.inject(0) { |k,v| }
-    # pretend.each do |x|
-    #   p number.chars.map { |n| n.to_i * 2**x }
-    # end
-
-    # p "test_array: #{test}"
-    # test.inject(0) { |sum, n| sum + n }
+    hash.each { |k, v| sum += v.to_i * 2**k }
+    sum
   end
 end
 
 Binary.extend Binary
+
+module BookKeeping
+  VERSION = 3
+end
