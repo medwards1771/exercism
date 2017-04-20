@@ -12,7 +12,7 @@ class SumOfMultiples
       nums << test if multiples.select { |x| (test % x).zero? }.any?
       test += 1
     end
-    #optimize. don't add integers to the multiples array that already exist
+    # optimize. don't add integers to the multiples array that already exist
     nums.uniq.inject(0, :+)
   end
 end

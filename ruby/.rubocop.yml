@@ -1,5 +1,5 @@
 AllCops:
-  Excludes:
+  Exclude:
     - '*/*_test.rb'
 Documentation:
   Enabled: false
