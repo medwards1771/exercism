@@ -1,5 +1,5 @@
 module Accumulate
-  def accumulate(&block)
+  def accumulate(*)
     output = []
     each { |x| output << yield(x) }
     output
