@@ -1,9 +1,13 @@
 module Accumulate
   def accumulate(&block)
     output = []
-    each { |e| out << yield(e) }
+    each { |x| output << yield(x) }
     output
   end
 end
 
 Array.include Accumulate
+
+module BookKeeping
+  VERSION = 1
+end
