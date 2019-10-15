@@ -1,8 +1,14 @@
+LETTER_TO_SCORE_MAP = {
+  'a' => 1,
+  'b' => 3,
+  'c' => 3,
+  'd' => 2,
+  'e' => 1,
+  'f' => 4,
+  'g' => 2,
+  'h' => 4
+}.freeze
+
 def score(letter)
-  case letter
-  when 'a'
-    1
-  when 'b'
-    3
-  end
+  LETTER_TO_SCORE_MAP[letter]
 end
