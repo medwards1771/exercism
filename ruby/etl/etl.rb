@@ -1,19 +1,19 @@
 def score(letter)
-  new_system = transform_old_system_into_new_system
-  new_system[letter]
+  every_letter_and_their_scores = transform_every_score_and_their_letters
+  every_letter_and_their_scores[letter]
 end
 
-def transform_old_system_into_new_system
-  new_system = {}
-  old_system.each do |score, letters|
+def transform_every_score_and_their_letters
+  every_letter_and_their_scores = {}
+  every_score_and_their_letters.each do |score, letters|
     letters.each do |letter|
-      new_system[letter.downcase] = score
+      every_letter_and_their_scores[letter.downcase] = score
     end
   end
-  new_system
+  every_letter_and_their_scores
 end
 
-def old_system
+def every_score_and_their_letters
   {
     1 => %w[A E I O U L N R S T],
     2 => %w[D G],

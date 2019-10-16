@@ -15,6 +15,6 @@ class EtlTest < Minitest::Test
 
   def test_letter_to_score_map
     # for posterity
-    assert_equal transform_old_system_into_new_system, LETTER_TO_SCORE_MAP_FIXTURE
+    assert_equal transform_every_score_and_their_letters, LETTER_TO_SCORE_MAP_FIXTURE
   end
 end
