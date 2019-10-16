@@ -5,16 +5,21 @@ require_relative 'fixtures'
 class EtlTest < Minitest::Test
   def test_how_many_points_a_is_worth
     letter = "a"
-    assert_equal score(letter), 1
+    etl = ETL.new
+
+    assert_equal etl.score(letter), 1
   end
 
   def test_how_many_points_f_is_worth
     letter = "f"
-    assert_equal score(letter), 4
+    etl = ETL.new
+
+    assert_equal etl.score(letter), 4
   end
 
   def test_letter_to_score_map
     # for posterity
-    assert_equal transform_every_score_and_their_letters, LETTER_TO_SCORE_MAP_FIXTURE
+    etl = ETL.new
+    assert_equal etl.every_letter_and_their_scores, LETTER_TO_SCORE_MAP_FIXTURE
   end
 end
