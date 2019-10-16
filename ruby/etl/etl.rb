@@ -4,15 +4,9 @@ def score(letter)
 end
 
 def transform_old_system_into_new_system
-  # make a new empty hash
   new_system = {}
-  # iterate over the old system with k,v
   old_system.each do |score, letters|
-    # iterate over the v which will be letters
     letters.each do |letter|
-      # downcase each letter
-      # make each letter a key in the new hash
-      # assign the key's value to the k
       new_system[letter.downcase] = score
     end
   end
