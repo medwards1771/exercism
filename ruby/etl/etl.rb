@@ -2,7 +2,7 @@ class ETL
   attr_accessor :every_letter_and_their_scores
 
   def initialize
-    @every_letter_and_their_scores = transform_every_score_and_their_letters
+    @every_letter_and_their_scores = {}
   end
 
   def every_score_and_their_letters
@@ -18,18 +18,15 @@ class ETL
   end
 
   def score(letter)
+    transform_every_score_and_their_letters
     every_letter_and_their_scores[letter]
   end
 
-  private
-
   def transform_every_score_and_their_letters
-    new_hash = {}
     every_score_and_their_letters.each do |score, letters|
       letters.each do |letter|
-        new_hash[letter.downcase] = score
+        @every_letter_and_their_scores[letter.downcase] = score
       end
     end
-    new_hash
   end
 end

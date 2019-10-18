@@ -20,6 +20,8 @@ class EtlTest < Minitest::Test
   def test_letter_to_score_map
     # for posterity
     etl = ETL.new
+    etl.transform_every_score_and_their_letters
+
     assert_equal etl.every_letter_and_their_scores, LETTER_TO_SCORE_MAP_FIXTURE
   end
 end
