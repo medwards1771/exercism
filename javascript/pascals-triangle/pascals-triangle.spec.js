@@ -1,8 +1,13 @@
-function Triangle() {}
+class Triangle {
+  firstRow(){
+    return 1;
+  }
+}
+
 
 describe('first row', ()=> {
   it('returns 1', ()=> {
     var triangle = new Triangle();
-    expect(triangle.first_row).toEqual(1)
+    expect(triangle.firstRow()).toEqual(1)
   });
 });
