@@ -1,13 +1,13 @@
 class Triangle {
-  firstRow(){
-    return 1;
+  row(number){
+    return number;
   }
 }
 
 
-describe('first row', ()=> {
-  it('returns 1', ()=> {
-    var triangle = new Triangle();
-    expect(triangle.firstRow()).toEqual(1)
+describe('#row', ()=> {
+  var triangle = new Triangle();
+  it('computes the numbers for a given row', ()=> {
+    expect(triangle.row(1)).toEqual(1)
   });
 });
